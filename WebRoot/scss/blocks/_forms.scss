@@ -1,0 +1,74 @@
+/**
+ * Form Style
+ */
+
+
+ .sf-form{
+    &.sf-form-boxed{
+        padding: 30px;
+        border-radius: 0;
+        border: 1px solid #d5d5d5;
+    }
+}
+.sf-form-inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: -20px;
+    .single-input{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 20px;
+
+        &.single-input-half{
+            flex: 0 0 calc(50% - 15px);
+            max-width: calc(50% - 15px);
+        }
+
+        label{
+            font-family: $heading-font;
+            font-weight: 400;
+            margin-bottom: 8px;
+            display: block;
+            color: $heading-color;
+        }
+        input, select, textarea, .nice-select{
+            border-radius: 0;
+            border: 1px solid #e5e5e5;
+        }
+        input + input{
+            margin-top: 20px;
+        }
+        .checkbox-input{
+            display: inline-block;
+            label{
+                display: inline-block;
+            }
+        }
+    }
+    a{
+        color: $body-color;
+        font-size: 13px;
+        &:hover{
+            color: $theme-color;
+        }
+    }
+}
+
+
+@media #{$sm-layout}{
+    .sf-form{
+        .single-input{
+            &.single-input-half{
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media #{$xs-layout}{
+    .sf-form.sf-form-boxed {
+        padding: 20px;
+    }
+}

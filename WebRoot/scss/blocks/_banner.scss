@@ -1,0 +1,133 @@
+/**
+ * Banner Styles
+ */
+
+.image-banner-wrapper{
+    margin-top: -30px;
+}
+
+.image-banner{
+    position: relative;
+    overflow: hidden;
+    backface-visibility: hidden;
+    
+    a{
+        display: block;
+    }
+
+    img{
+        width: 100%;
+    }
+
+    &::before, &::after{
+        content: "";
+        position: absolute;
+        background: rgba(255,255,255,0.3);
+        transition: all 0.4s ease-out 0s;
+    }
+
+    &::before{
+        left: 0;
+        top: -80px;
+        height: 80px;
+        width: 100%;
+    }
+    &::after{
+        top: 0;
+        left: -80px;
+        height: 100%;
+        width: 80px;
+    }
+    
+    &:hover{
+        &::before{
+            top: 100%;
+        }
+        &::after{
+            left: 100%;
+        }
+    }
+}
+
+
+
+
+[class*="bg-banner-"]{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+@for $i from 1 through 20{
+	.bg-banner-#{$i}{
+		background-image: url(img/banners/bg-banner-#{$i}.jpg);
+	}
+}
+
+.banner-content{
+    padding: 0 75px;
+    h6{
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+    h2{
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        span{
+            color: $theme-color;
+        }
+    }
+    p{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .sf-button{
+        margin-top: 10px;
+    }
+
+    &.banner-content-white{
+        h1,h2,h3,h4,h5,h6,p{
+            color: #ffffff;
+        }
+    }
+
+    @media #{$lg-layout}{
+        padding: 0;
+        h2{
+            font-size: 38px;
+        }
+    }
+
+    @media #{$md-layout}{
+        padding: 0;
+        h2{
+            font-size: 32px;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+
+    @media #{$sm-layout}{
+        padding: 0;
+        h2{
+            font-size: 30px;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+}
+
+.fullwidth-banner-area{
+    background-position: left center;
+}
+
+@media only screen and (min-width: 992px){
+    .fullwidth-banner-area{
+        &::before{
+            opacity: 0;
+        }
+    }
+}

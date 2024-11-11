@@ -1,0 +1,32 @@
+/**
+ * Support
+ */
+
+.support-items-wrapper{
+    margin-bottom: -30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.support-item{
+    flex-basis: 1;
+    margin-bottom: 30px;
+    padding-left: 35px;
+    position: relative;
+    &-icon{
+        width: 25px;
+        max-height: 25px;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 5px;
+    }
+    h5{
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: #000000;
+    }
+    p{
+        margin-bottom: 0;
+    }
+}

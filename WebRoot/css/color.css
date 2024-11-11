@@ -1,0 +1,17 @@
+
+.single-hero-item .hero-content p{
+    color: #ffffff;
+}
+.hero-area.slider-navigation-1 .slider-navigation{
+    border-color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+}
+.header-bottom-area{
+    background: #000000;
+}
+.product-item-badge{
+    background: #333333;
+}
+.sticky-header.is-sticky .header-bottom-area{
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+}

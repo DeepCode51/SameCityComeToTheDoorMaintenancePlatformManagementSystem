@@ -1,0 +1,333 @@
+/**
+ * Typography
+ */
+
+* {
+	box-sizing: border-box;
+}
+img {
+	max-width: 100%;
+}
+html {
+	overflow: hidden;
+	overflow-y: auto;
+}
+body {
+	overflow: hidden;
+	font-size: $body-font-size;
+	line-height: $body-line-height;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: $body-font;
+	color: $body-color;
+	font-weight: 400;
+}
+@include placeholder-color($body-color);
+
+a {
+	transition: all 0.4s ease-in-out 0s;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+address,
+p,
+pre,
+blockquote,
+dl,
+dd,
+menu,
+ol,
+ul,
+table,
+caption,
+hr {
+	margin: 0;
+	margin-bottom: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: $heading-font;
+	line-height: 1.3;
+	color: $heading-color;
+}
+h1,
+.h1 {
+	font-size: $h1;
+}
+h2,
+.h2 {
+	font-size: $h2;
+}
+h3,
+.h3 {
+	font-size: $h3;
+	line-height: 31px;
+}
+h4,
+.h4 {
+	font-size: $h4;
+}
+h5,
+.h5 {
+	font-size: $h5;
+}
+h6,
+.h6 {
+	font-size: $h6;
+}
+@media #{$md-layout} {
+	h1,
+	.h1 {
+		font-size: $h1 - 7;
+	}
+	
+	h2,
+	.h2 {
+		font-size: $h2 - 2;
+	}
+	h3,
+	.h3 {
+		font-size: $h3 - 2;
+	}
+}
+
+@media #{$sm-layout} {
+	h1,
+	.h1 {
+		font-size: $h1 - 10;
+	}
+	
+	h2,
+	.h2 {
+		font-size:$h2 - 4;
+	}
+	h3,
+	.h3 {
+		font-size: $h3 - 2;
+	}
+}
+
+@media #{$xs-layout} {
+	h1,
+	.h1 {
+		font-size: $h1 - 12;
+	}
+	h4,
+	.h4{
+		font-size: $h4 - 2;
+	}
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+	font-weight: 700;
+}
+h4,
+.h4,
+h5,
+.h5 {
+	font-weight: 600;
+}
+h6,
+.h6 {
+	font-weight: 500;
+}
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	outline: none;
+}
+a:visited {
+	color: inherit;
+}
+input,
+button,
+select,
+textarea {
+	background: transparent;
+	border: 1px solid $border-color;
+	transition: all 0.4s ease-out 0s;
+	color: $body-color;
+	@include placeholder-color($body-color);
+	&:focus,
+	&:active {
+		outline: none;
+		border-color: $theme-color;
+	}
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: $body-font;
+}
+
+input,
+select,
+textarea {
+	width: 100%;
+	font-size: 14px;
+}
+input,
+select {
+	height: 48px;
+	padding: 0 15px;
+}
+textarea{
+	padding: 15px;
+}
+
+input[type="checkbox"], input[type="radio"]{
+	display: inline-block;
+	height: 14px;
+	width: 14px;
+	vertical-align: middle;
+	& ~ label{
+		display: inline-block;
+	}
+}
+
+
+input.sn-checkbox{
+	display: none;
+	& + label{
+		position: relative;
+		padding-left: 50px;
+		cursor: pointer;
+		&::before{
+			content: "";
+			position: absolute;
+			height: 20px;
+			background: $body-color;
+			width: 40px;
+			border-radius: 100px;
+			z-index: 1;
+			transition: all 0.4s ease-in-out 0s;
+			vertical-align: middle;
+			left: 0;
+			top: 0;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			height: 16px;
+			background: #ffffff;
+			width: 16px;
+			border-radius: 100px;
+			z-index: 1;
+			transition: all 0.4s ease-in-out 0s;
+			vertical-align: middle;
+			left: 2px;
+			top: 2px;
+		}
+	}
+	&:checked + label{
+		&::before{
+			background: $theme-color;
+		}
+		&::after{
+			left:  22px;
+		}
+	}
+}
+
+
+input.sn-radio{
+	display: none;
+	& + label{
+		position: relative;
+		padding-left: 30px;
+		cursor: pointer;
+		&::before{
+			content: "";
+			position: absolute;
+			height: 20px;
+			background: transparent;
+			border: 2px solid $body-color;
+			width: 20px;
+			border-radius: 100px;
+			z-index: 1;
+			transition: all 0.4s ease-in-out 0s;
+			vertical-align: middle;
+			left: 0;
+			top: 0;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			height: 10px;
+			background: #ffffff;
+			width: 10px;
+			border-radius: 100px;
+			z-index: 1;
+			transition: all 0.4s ease-in-out 0s;
+			vertical-align: middle;
+			left: 5px;
+			top: 5px;
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+	&:checked + label{
+		&::before{
+			border-color: $theme-color;
+		}
+		&::after{
+			background: $theme-color;
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+
+blockquote{
+	background: #f2f2f2;
+    border: none;
+    font-size: 15px;
+    margin: 30px 0 30px 30px;
+    padding: 30px 35px;
+	border-left: 4px solid $theme-color;
+	line-height: 26px;
+	font-style: normal;
+}
+
+
+@media #{$xs-layout}{
+	blockquote {
+		margin: 30px 0 30px 20px;
+		padding: 20px 20px;
+		line-height: 24px;
+	}
+}
+
+.table{
+	margin-bottom: 0;
+}

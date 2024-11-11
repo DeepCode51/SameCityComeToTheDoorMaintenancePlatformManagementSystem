@@ -1,0 +1,105 @@
+@mixin clearfix(){
+	&::after{
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
+@mixin placeholder-color($placeholder-color){
+	&::-webkit-input-placeholder {
+		color: $placeholder-color
+	}
+	
+	&:-moz-placeholder {
+		color: $placeholder-color
+	}
+	
+	&::-moz-placeholder {
+		color: $placeholder-color
+	}
+	
+	&:-ms-input-placeholder {
+		color: $placeholder-color
+	}
+}
+
+
+
+// Gradient color
+@mixin gradient-color($value , $deg){
+	@if $value == a{
+		background:-webkit-linear-gradient( $deg#{deg}, #fe0190 0%, #ed560e 62%, #ff9600 100%); 
+		background:-moz-linear-gradient( $deg#{deg}, #fe0190 0%, #ed560e 62%, #ff9600 100%); 
+		background:-ms-linear-gradient( $deg#{deg}, #fe0190 0%, #ed560e 62%, #ff9600 100%); 
+		background:-o-linear-gradient( $deg#{deg}, #fe0190 0%, #ed560e 62%, #ff9600 100%); 
+		background:linear-gradient( $deg#{deg}, #f71595 0%, #ed560e 62%, #ff9600 100%);
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		-ms-background-clip: text;
+		-o-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-moz-text-fill-color: transparent;
+		-ms-text-fill-color: transparent;
+		-o-text-fill-color: transparent;
+		text-fill-color: transparent;
+	} @else if $value == b{
+		background:-webkit-linear-gradient( $deg#{deg}, rgb(251,110,57) 12%, rgb(252,85,93) 50%, rgb(253,59,128) 91%); 
+		background:-moz-linear-gradient( $deg#{deg}, rgb(251,110,57) 12%, rgb(252,85,93) 50%, rgb(253,59,128) 91%); 
+		background:-ms-linear-gradient( $deg#{deg}, rgb(251,110,57) 12%, rgb(252,85,93) 50%, rgb(253,59,128) 91%); 
+		background:-o-linear-gradient( $deg#{deg}, rgb(251,110,57) 12%, rgb(252,85,93) 50%, rgb(253,59,128) 91%); 
+		background:linear-gradient( $deg#{deg}, rgb(251,110,57) 12%, rgb(252,85,93) 50%, rgb(253,59,128) 91%);
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		-ms-background-clip: text;
+		-o-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-moz-text-fill-color: transparent;
+		-ms-text-fill-color: transparent;
+		-o-text-fill-color: transparent;
+		text-fill-color: transparent;
+	} @else if $value == c{
+		background:-webkit-linear-gradient( $deg#{deg}, rgb(40,172,225) 12%, rgb(81,204,231) 50%, rgb(122,235,236) 91%); 
+		background:-moz-linear-gradient( $deg#{deg}, rgb(40,172,225) 12%, rgb(81,204,231) 50%, rgb(122,235,236) 91%); 
+		background:-ms-linear-gradient($deg#{deg}, rgb(40,172,225) 12%, rgb(81,204,231) 50%, rgb(122,235,236) 91%); 
+		background:-o-linear-gradient( $deg#{deg}, rgb(40,172,225) 12%, rgb(81,204,231) 50%, rgb(122,235,236) 91%); 
+		background:linear-gradient( $deg#{deg}, rgb(40,172,225) 12%, rgb(81,204,231) 50%, rgb(122,235,236) 91%);
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		-ms-background-clip: text;
+		-o-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-moz-text-fill-color: transparent;
+		-ms-text-fill-color: transparent;
+		-o-text-fill-color: transparent;
+		text-fill-color: transparent;
+	}
+}
+
+
+
+// Gradient Background
+@mixin gradient-bg($value, $deg){
+	@if $value == a{
+		background:-webkit-linear-gradient( $deg#{deg}, #fe0190 0%, #ed560e 62%, #ff9600 100%); 
+		background:-moz-linear-gradient( $deg#{deg}, #fe0190 0%, #ed560e 62%, #ff9600 100%); 
+		background:-ms-linear-gradient( $deg#{deg}, #fe0190 0%, #ed560e 62%, #ff9600 100%); 
+		background:-o-linear-gradient( $deg#{deg}, #fe0190 0%, #ed560e 62%, #ff9600 100%); 
+		background:linear-gradient( $deg#{deg}, #fe0190 0%, #ed560e 62%, #ff9600 100%);
+	} @else if $value == b{
+		background:-webkit-linear-gradient( $deg#{deg}, rgba(223,32,32,1) 0%, rgba(0,0,0,0.6) 36%, rgba(0,0,0,0.3) 100%); 
+		background:-moz-linear-gradient( $deg#{deg}, rgba(223,32,32,1) 0%, rgba(0,0,0,0.6) 36%, rgba(0,0,0,0.3) 100%); 
+		background:-ms-linear-gradient( $deg#{deg}, rgba(223,32,32,1) 0%, rgba(0,0,0,0.6) 36%, rgba(0,0,0,0.3) 100%); 
+		background:-o-linear-gradient( $deg#{deg}, rgba(223,32,32,1) 0%, rgba(0,0,0,0.6) 36%, rgba(0,0,0,0.3) 100%); 
+		background:linear-gradient( $deg#{deg}, rgba(223,32,32,1) 0%, rgba(0,0,0,0.6) 36%, rgba(0,0,0,0.3) 100%);
+	} @else if $value == c{
+		background:-webkit-linear-gradient( $deg#{deg}, rgb(40,172,225) 12%, rgb(81,204,231) 50%, rgb(122,235,236) 91%); 
+		background:-moz-linear-gradient( $deg#{deg}, rgb(40,172,225) 12%, rgb(81,204,231) 50%, rgb(122,235,236) 91%); 
+		background:-ms-linear-gradient( $deg#{deg}, rgb(40,172,225) 12%, rgb(81,204,231) 50%, rgb(122,235,236) 91%); 
+		background:-o-linear-gradient( $deg#{deg}, rgb(40,172,225) 12%, rgb(81,204,231) 50%, rgb(122,235,236) 91%); 
+		background:linear-gradient( $deg#{deg}, rgb(40,172,225) 12%, rgb(81,204,231) 50%, rgb(122,235,236) 91%);
+	}
+}
+

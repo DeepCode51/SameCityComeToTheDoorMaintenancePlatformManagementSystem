@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.BbsMapper">
+  <resultMap id="BaseResultMap" type="com.entity.Bbs">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="pubtime" jdbcType="VARCHAR" property="pubtime" />
+    <result column="etime" jdbcType="VARCHAR" property="etime" />
+    <result column="isdel" jdbcType="VARCHAR" property="isdel" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="gid" jdbcType="INTEGER" property="gid" />
+    <result column="btype" jdbcType="VARCHAR" property="btype" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.entity.BbsWithBLOBs">
+    <result column="note" jdbcType="LONGVARCHAR" property="note" />
+    <result column="note2" jdbcType="LONGVARCHAR" property="note2" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, pubtime, etime, isdel, uid, gid, btype, status
+  </sql>
+  <sql id="Blob_Column_List">
+    note, note2
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bbs
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bbs
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.BbsWithBLOBs">
+    insert into bbs (id, name, pubtime, 
+      etime, isdel, uid, 
+      gid, btype, status, 
+      note, note2)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{pubtime,jdbcType=VARCHAR}, 
+      #{etime,jdbcType=VARCHAR}, #{isdel,jdbcType=VARCHAR}, #{uid,jdbcType=INTEGER}, 
+      #{gid,jdbcType=INTEGER}, #{btype,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{note,jdbcType=LONGVARCHAR}, #{note2,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.BbsWithBLOBs">
+    insert into bbs
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="pubtime != null">
+        pubtime,
+      </if>
+      <if test="etime != null">
+        etime,
+      </if>
+      <if test="isdel != null">
+        isdel,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="gid != null">
+        gid,
+      </if>
+      <if test="btype != null">
+        btype,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+      <if test="note2 != null">
+        note2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="pubtime != null">
+        #{pubtime,jdbcType=VARCHAR},
+      </if>
+      <if test="etime != null">
+        #{etime,jdbcType=VARCHAR},
+      </if>
+      <if test="isdel != null">
+        #{isdel,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="gid != null">
+        #{gid,jdbcType=INTEGER},
+      </if>
+      <if test="btype != null">
+        #{btype,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="note2 != null">
+        #{note2,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.BbsWithBLOBs">
+    update bbs
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="pubtime != null">
+        pubtime = #{pubtime,jdbcType=VARCHAR},
+      </if>
+      <if test="etime != null">
+        etime = #{etime,jdbcType=VARCHAR},
+      </if>
+      <if test="isdel != null">
+        isdel = #{isdel,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="gid != null">
+        gid = #{gid,jdbcType=INTEGER},
+      </if>
+      <if test="btype != null">
+        btype = #{btype,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="note2 != null">
+        note2 = #{note2,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.entity.BbsWithBLOBs">
+    update bbs
+    set name = #{name,jdbcType=VARCHAR},
+      pubtime = #{pubtime,jdbcType=VARCHAR},
+      etime = #{etime,jdbcType=VARCHAR},
+      isdel = #{isdel,jdbcType=VARCHAR},
+      uid = #{uid,jdbcType=INTEGER},
+      gid = #{gid,jdbcType=INTEGER},
+      btype = #{btype,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      note = #{note,jdbcType=LONGVARCHAR},
+      note2 = #{note2,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Bbs">
+    update bbs
+    set name = #{name,jdbcType=VARCHAR},
+      pubtime = #{pubtime,jdbcType=VARCHAR},
+      etime = #{etime,jdbcType=VARCHAR},
+      isdel = #{isdel,jdbcType=VARCHAR},
+      uid = #{uid,jdbcType=INTEGER},
+      gid = #{gid,jdbcType=INTEGER},
+      btype = #{btype,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  
+  
+  
+  
+  
+    <select id="getCount" parameterType="java.util.Map" resultType="int">
+    select  count(*) from bbs  where 1=1 
+   <if test="note!=null ">
+     and note like concat('%',#{note},'%')
+     </if>
+     <if test="name!=null ">
+     and name like concat('%',#{name},'%')
+     </if>
+      <if test="uid!=null ">
+     and uid =#{uid,jdbcType=INTEGER}
+     </if>
+     <if test="gid!=null ">
+     and gid =#{gid,jdbcType=INTEGER}
+     </if>
+     <if test="btype!=null ">
+     and btype =#{btype,jdbcType=VARCHAR}
+     </if>
+     <if test="status!=null ">
+     and status =#{status,jdbcType=VARCHAR}
+     </if>
+  </select>
+  <select id="getAll" parameterType="java.util.Map" resultMap="ResultMapWithBLOBs">
+    select   
+    <include refid="Base_Column_List" />
+     ,
+    <include refid="Blob_Column_List" />
+     from bbs where 1=1
+    <if test="note!=null ">
+     and note like concat('%',#{note},'%')
+     </if>
+      <if test="name!=null ">
+     and name like concat('%',#{name},'%')
+     </if>
+      <if test="uid!=null ">
+     and uid =#{uid,jdbcType=INTEGER}
+     </if>
+     <if test="gid!=null ">
+     and gid =#{gid,jdbcType=INTEGER}
+     </if>
+     <if test="btype!=null ">
+     and btype =#{btype,jdbcType=VARCHAR}
+     </if>
+     <if test="status!=null ">
+     and status =#{status,jdbcType=VARCHAR}
+     </if>
+     order by pubtime desc
+  </select> 
+   <select id="getByPage" parameterType="java.util.Map" resultMap="ResultMapWithBLOBs">
+     select 
+     <include refid="Base_Column_List" />
+       ,
+    <include refid="Blob_Column_List" />
+    from bbs where 1=1 
+    <if test="note!=null ">
+     and note like concat('%',#{note},'%')
+     </if>
+      <if test="name!=null ">
+     and name like concat('%',#{name},'%')
+     </if>
+      <if test="uid!=null ">
+     and uid =#{uid,jdbcType=INTEGER}
+     </if>
+     <if test="gid!=null ">
+     and gid =#{gid,jdbcType=INTEGER}
+     </if>
+     <if test="btype!=null ">
+     and btype =#{btype,jdbcType=VARCHAR}
+     </if>
+     <if test="status!=null ">
+     and status =#{status,jdbcType=VARCHAR}
+     </if>
+      order by pubtime desc 
+     <if test="pageno!=null and pageSize!=null">
+     limit #{pageno},#{pageSize}
+     </if>
+     </select>
+  
+</mapper>

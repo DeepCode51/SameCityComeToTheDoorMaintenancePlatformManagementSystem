@@ -1,0 +1,94 @@
+/**
+ * Newsletter
+ */
+
+.newsletter-content{
+    position: relative;
+    padding-left: 70px;
+    
+    &-icon{
+        position: absolute;
+        left: 0;
+        top: 6px;
+        font-size: 48px;
+        color: $theme-color;
+    }
+    h3{
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    p{
+        margin-bottom: 0;
+    }
+
+    @media #{$lg-layout}{
+        padding-left: 50px;
+        &-icon{
+            font-size: 36px;
+        }
+    }
+
+    @media #{$md-layout, $sm-layout}{
+        padding-left: 50px;
+        &-icon{
+            font-size: 36px;
+        }
+    }
+}
+
+.newsletter-form{
+    display: flex;
+    input{
+        height: 60px;
+        line-height: 60px;
+        padding: 0 30px;
+        flex-shrink: 100;
+    }
+    input[type="submit"], button[type="submit"]{
+        height: 60px;
+        line-height: 60px;
+        white-space: nowrap;
+        padding: 0 55px;
+    }
+
+    @media #{$lg-layout}{
+        input{
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px;
+        }
+        input[type="submit"], button[type="submit"]{
+            height: 50px;
+            line-height: 50px;
+            white-space: nowrap;
+            padding: 0 35px;
+        }
+    }
+
+    @media #{$md-layout, $sm-layout}{
+        margin-top: 30px;
+
+        input{
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px;
+        }
+        input[type="submit"], button[type="submit"]{
+            height: 50px;
+            line-height: 50px;
+            white-space: nowrap;
+            padding: 0 35px;
+        }
+    }
+
+    @media #{$xs-layout}{
+        flex-wrap: wrap;
+        input{
+            width: 100%;
+        }
+        input[type="submit"], button[type="submit"]{
+            width: 100%;
+            margin-top: 15px;
+        }
+    }
+}

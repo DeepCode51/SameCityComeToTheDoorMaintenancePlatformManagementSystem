@@ -1,0 +1,93 @@
+/**
+ * Shop Page
+ */
+
+
+.ratting-box{
+    span{
+        color: #333333;
+        &.active{
+            color: $theme-color;
+        }
+    }
+
+    &.hover-action{
+        span{
+            cursor: pointer;
+        }
+    }
+}
+
+.shop-page-products{
+    &.list{
+        [class*="col"]{
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+
+/* Quick View Modal */
+.quick-view-modal{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -5;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-out 0s;
+
+    .body-overlay{
+        z-index: 1;
+    }
+
+    .quick-view-modal-inner {
+        display: inline-block;
+        background: #fff;
+        padding: 30px 15px;
+        overflow-y: auto;
+        max-height: 100%;
+        max-width: 100%;
+        text-align: left;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0)  scale(0);
+        transition: all 0.4s ease-out 0s;
+        z-index: 2;
+    }
+    .close-quickview-modal{
+        position: absolute;
+        right: 0;
+        left: auto;
+        top: 0;
+        bottom: auto;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        color: #000;
+        background: transparent;
+        padding: 10px 14px;
+        display: none;
+        &:hover{
+            color: #f10;
+        }
+    }
+
+
+    &.is-visible{
+        visibility: visible;
+        opacity: 1;
+        z-index: 200;
+
+        .quick-view-modal-inner{
+            transform: translate3d(-50%, -50%, 0)  scale(1);
+        }
+        .close-quickview-modal{
+            display: block;
+        }
+    }
+}

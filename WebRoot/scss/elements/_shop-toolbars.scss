@@ -1,0 +1,120 @@
+/**
+ * Shop Toolbars
+ */
+
+.toolbox{
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    & > *{
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
+    &-view{
+        font-size: 0;
+        button{
+            border: none;
+            border-right: 1px solid #e5e5e5;
+            padding: 0 10px;
+            font-size: 14px;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+
+            &:first-child{
+                padding-left: 0;
+            }
+            &:last-child{
+                padding-right: 0;
+                border-right: none;
+            }
+
+            &.active{
+                color: $theme-color;
+            }
+        }
+    }
+
+    &-productcount{
+        text-align: center;
+        span{
+            display: inline-block;
+            vertical-align: middle;
+            font-family: $heading-font;
+            font-weight: 700;
+            color: $heading-color;
+        }
+    }
+
+    &-sorting{
+        text-align: right;
+        .nice-select{
+            display: inline-block;
+            width: auto;
+            height: auto;
+            line-height: 1;
+            border: none;
+            padding-right: 20px;
+            span.current{
+                border-right: 1px solid #e5e5e5;
+            }
+            &::after {
+                content: "\e64b";
+                font-family: 'themify';
+                position: absolute;
+                left: auto;
+                right: 0;
+                line-height: 1;
+                width: 11px;
+                height: 11px;
+                line-height: 11px;
+                padding: 0;
+                top: 6px;
+                color: $theme-color;
+                font-size: 10px;
+                display: inline-block;
+            }
+            .list{
+                width: 200px;
+                right: 0;
+                left: auto;
+                top: calc(100% + 13px);
+            }
+            .option{
+                line-height: 30px;
+                min-height: 30px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    }
+
+    @media #{$sm-layout}{
+        flex-wrap: wrap;
+        padding: 20px 10px;
+        & > *{
+            flex-basis: 100%;
+            flex-grow: 100;
+        }
+        &-view{
+            text-align: center;
+        }
+        &-productcount{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        &-sorting{
+            text-align: center;
+            .nice-select .list{
+                left: 50%;
+                right: auto;
+                margin-left: -100px;
+            }
+        }
+    }
+}

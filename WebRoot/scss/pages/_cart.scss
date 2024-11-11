@@ -1,0 +1,141 @@
+/**
+ * Cart Page
+ */
+
+ .cart-table{
+    .table td, .table th{
+        vertical-align: middle;  
+        text-align: center;
+    }
+    .table thead th{
+        border-width: 1px;
+        font-family: $heading-font;
+        padding: 15px 10px;
+    }
+    .table-hover tbody tr:hover {
+        background-color: rgba(0,0,0,.02);
+    }
+    .table thead th{
+        &.cart-column-image{
+            width: 145px;
+        }
+        &.cart-column-productname{
+            min-width: 200px;
+        }
+        &.cart-column-remove{
+            width: 130px;
+        }
+        &.cart-column-quantity{
+            min-width: 145px;
+        }
+        &.cart-column-price, &.cart-column-total{
+            width: 130px;
+        }
+        &.cart-column-addtocart{
+            min-width: 160px;
+        }
+    }
+    .product-image{
+        display: inline-block;
+        width: 75px;
+        padding: 5px 0;
+    }
+    .product-title{
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 700;
+        color: $body-color;
+        &:hover{
+            color: $theme-color;
+        }
+    }
+    .total-price{
+        display: inline-block;
+        font-weight: 700;
+    }
+    .remove-product{
+        color: $body-color;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+        text-align: center;
+        line-height: 20px;
+        border: 1px solid #e5e5e5;
+        border-radius: 0;
+        padding: 0;
+        transition: all 0.3s ease-out 0s;
+        &:hover{
+            color: #ffffff;
+            background: $theme-color;
+            border-color: $theme-color;
+        }
+    }
+}
+
+.cart-content-left{
+    margin-top: 40px;
+}
+.cart-content-coupon{
+    margin-top: 40px;
+    & > h6{
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .coupon-form{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        .sf-button{
+            padding: 12px 35px 10px 35px;
+        }
+        input, button{
+            margin-top: 10px;
+        }
+        input[type="text"]{
+            width: 170px;
+        }
+    }
+}
+
+.cart-content-right{
+    margin-top: 40px;
+    text-align: right;
+    h2{
+        margin-top: -8px;
+        display: inline-block;
+        border-bottom: 2px solid $heading-color;
+        margin-bottom: 25px;
+    }
+}
+.cart-pricing-table{
+    border: none;
+    font-family: $heading-font;
+    th, td{
+        text-align: right;
+        border: none;
+        padding: 0;
+    }
+    td{
+        color: $theme-color;
+        font-weight: 700;
+    }
+    .cart-total{
+        font-size: 24px;
+        th, td{
+            padding-top: 20px;
+        }
+    }
+}
+
+@media #{$sm-layout}{
+    .cart-content-right{
+        text-align: left;
+    }
+    .cart-pricing-table{
+        th, td{
+            text-align: left;
+        }
+    }
+}

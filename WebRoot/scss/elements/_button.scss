@@ -1,0 +1,148 @@
+/**
+ * Button
+ */
+
+%button{
+    display: inline-block;
+    border: 1px solid $theme-color;
+    font-family: $heading-font;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 14px 35px 11px 35px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+    transition: all 0.4s ease-in-out 0s;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: $theme-color;
+    color: #ffffff;
+    font-family: $body-font;
+    line-height: $body-line-height;
+
+    &:focus, &:active, &:visited{
+        color: #ffffff;
+    }
+    &::before, &::after{
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 100%;
+        left: 0;
+        background: rgba(#000000, 0.05);
+        z-index: -1;
+        transition: all 0.4s ease-in-out 0s;
+    }
+    &::before{
+        top: 0;
+    }
+    &::after{
+        bottom: 0;
+    }
+    span{
+        position: relative;
+        z-index: 2;
+    }
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        background: $theme-color;
+        border-color: $theme-color;
+        color: #ffffff;
+        &::before, &::after{
+            height: 50%;
+        }
+    }
+}
+
+.sf-button,
+.sf-button:link{
+    @extend %button;
+
+    &.sf-button-dark,
+    &.sf-button-dark:link{
+        background: #3b4251;
+        border-color: #3b4251;
+        &::before, &::after{
+            background: rgba(#ffffff, 0.05);
+        }
+    }
+
+    &.sf-button-white,
+    &.sf-button-white:link{
+        background: #ffffff;
+        border-color: #ffffff;
+        color: $theme-color;
+        &::before, &::after{
+            background: rgba(#000000, 0.05);
+        }
+    }
+
+    &.sf-button-transparent,
+    &.sf-button-transparent:link{
+        background: transparent;
+        border-color: $body-color;
+        color: $body-color;
+        &::before, &::after{
+            background: rgba($theme-color, 0.9);
+        }
+        &:hover{
+            color: #ffffff;
+            border-color: $theme-color;
+        }
+    }
+
+    &.sf-button-fullwidth,
+    &.sf-button-fullwidth:link{
+        display: block;
+        width: 100%;
+    }
+
+    &.sf-button-lg,
+    &.sf-button-lg:link{
+        padding: 16px 35px 14px 35px;
+    }
+
+    &.sf-button-sm,
+    &.sf-button-sm:link{
+        padding: 10px 20px 8px 20px;
+    }
+
+}
+
+.button-group{
+    margin-top: -10px;
+    margin-left: -10px;
+    .sf-button{
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+}
+
+
+.sn-readmore,
+.sn-readmore:link{
+    display: inline-block;
+    text-transform: uppercase;
+    background: $theme-color;
+    font-size: 14px;
+    font-family: $body-font;
+    padding: 11px 20px 9px 20px;
+    color: #ffffff;
+    i{
+        line-height: 20px;
+        font-size: 9px;
+        margin-left: 5px;
+        vertical-align: middle;
+        margin-top: -1px;
+    }
+    &:focus, &:active, &:visited{
+        color: #ffffff;
+    }
+    &:hover{
+        color: #ffffff;
+        background: darken($theme-color, 10%);
+    }
+}

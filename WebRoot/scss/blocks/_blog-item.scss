@@ -1,0 +1,219 @@
+/**
+ * Blog Item
+ */
+
+.blog-wrapper{
+    margin-top: -30px;
+}
+
+.blog-item{
+    position: relative;
+    margin-top: 30px;
+    overflow: hidden;
+    backface-visibility: hidden;
+
+    &-image{
+        overflow: hidden;
+        img{
+            width: 100%;
+            transition: all 0.4s ease-in-out 0s;
+        }
+    }
+
+    &-content{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        height: calc(100% - 20px);
+        width: calc(100% - 20px);
+        background: rgba(#ffffff, 0.88);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        transform: translateX(calc(-100% - 15px));
+        transition: all 0.4s ease-in-out 0s;
+        backface-visibility: hidden;
+
+        .blog-item-author{
+            display: inline-block;
+            margin-bottom: 20px;
+            a{
+                color: $body-color;
+                &:hover{
+                    color: $theme-color;
+                }
+            }
+        }
+
+        .blog-item-title{
+            font-weight: 700;
+            a{
+                color: $heading-color;
+                &:hover{
+                    color: $theme-color;
+                }
+            }
+        }
+
+        .blog-item-meta{
+            font-family: $heading-font;
+            font-size: 12px;
+            color: $heading-color;
+
+            span{
+                display: inline-block;
+                color: $heading-color;
+                &::after{
+                    content: "/";
+                    padding: 0 10px;
+                }
+                &:last-child{
+                    &::after{
+                        display: none;
+                    }
+                }
+
+                a{
+                    color: $heading-color;
+                    &:hover{
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+
+        .sf-button{
+            margin-top: 30px;
+        }
+    }
+
+    &:hover &-image{
+        img{
+            transform: scale(1.2);
+        }
+    }
+
+    &:hover &-content{
+        transform: translateX(0);
+    }
+
+    @media #{$lg-layout, $md-layout}{
+        .blog-item-content{
+            text-align: left;
+
+            .blog-item-author {
+                margin-bottom: 10px;
+            }
+            .sf-button {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 991px){
+        .blog-item-content{
+            position: relative;
+            transform: translateX(0);
+            background: #f6f6f6;
+            left: auto;
+            top: auto;
+            width: 100%;
+            height: auto;
+            padding: 30px;
+            text-align: left;
+            
+            .blog-item-author {
+                margin-bottom: 10px;
+            }
+            .sf-button {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+
+
+/* Blog Details */
+.blog-details{
+    .blog-item{
+        margin-top: 0;
+    }
+    .blog-item-image{
+        margin-bottom: 30px;
+        img{
+            transform: scale(1) !important;
+        }
+    }
+    .blog-item-content{
+        position: relative;
+        transform: translateX(0);
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        padding: 0;
+        background: transparent;
+    }
+    .blog-item-author{
+        margin-bottom: 15px;
+    }
+    .blog-item-meta{
+        margin-bottom: 30px;
+    }
+    .blog-item-share{
+        margin-top: 30px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 20px;
+        h6{
+            display: inline-block;
+        }
+        .social-icons{
+            display: inline-block;
+        }
+    }   
+    .blog-details-comments-area{
+        margin-top: 40px;
+    }
+}
+
+.authorbox{
+    background: #f2f2f2;
+    margin-top: 40px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    &-image{
+        flex: 0 0 65px;
+        max-width: 65px;
+        border: 1px solid #d5d5d5;
+        margin-right: 20px;
+        align-self: flex-start;
+        background: #ffffff;
+        h5{
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+    }
+    h5{
+        margin-bottom: 8px;
+        a{
+            color: $heading-color;
+            &:hover{
+                color: $theme-color;
+            }
+        }
+    }
+    p{
+        margin-bottom: 0;
+    }
+
+    @media #{$sm-layout}{
+        flex-wrap: wrap;
+        &-image{
+            margin-bottom: 20px;
+        }
+    }
+}

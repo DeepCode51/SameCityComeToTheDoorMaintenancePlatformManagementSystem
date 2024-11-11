@@ -1,0 +1,125 @@
+/**
+ * Team Member
+ */
+
+.team-wrapper{
+    .single-team{
+        margin-top: 30px;
+    }
+}
+.single-team {
+    overflow: hidden;
+    position: relative;
+
+    &-thumb {
+        overflow: hidden;
+        img {
+            width: 100%;
+            transform: scale(1);
+            transition: all 0.4s cubic-bezier(0.63, 0.01, 0.36, 0.99) 0s;
+        }
+    }
+
+    &-content {
+        position: absolute;
+        overflow: hidden;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: transparent;
+        transition: all 0.4s ease-in-out 0s;
+        h4{
+            margin-bottom: 8px;
+            transform: translateX(-40px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease-in-out 0s;
+        }
+        h6{
+            margin-bottom: 0;
+            transform: translateX(40px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease-in-out 0s;
+        }
+    }
+
+    &-socialicons{
+        margin-top: 15px;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        transform: translateY(30px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease-in-out 0s;
+        li{
+            list-style: none;
+            display: inline-block;
+            &:not(:last-child){
+                margin-right: 10px;
+            }
+            a{
+                display: block;
+                color: $body-color;
+                height: 32px;
+                width: 32px;
+                line-height: 1;
+                border: 1px solid $body-color;
+                border-radius: 100px;
+                text-align: center;
+                i{
+                    line-height: 30px;
+                }
+                &:hover{
+                    background: $theme-color;
+                    color: #ffffff;
+                    border-color: $theme-color;
+                }
+            }
+        }
+    }
+
+    &:hover{
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    &:hover &-content{
+        background: rgba(#ffffff, 0.85);
+        h4, h6,{
+            transform: translate(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &:hover &-socialicons{
+        transform: translate(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media #{$md-layout, $sm-layout}{
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        &-content{
+            position: relative;
+            h4, h6,{
+                transform: translate(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &-socialicons{
+            transform: translate(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+}

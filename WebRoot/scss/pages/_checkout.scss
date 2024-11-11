@@ -1,0 +1,135 @@
+/**
+ * Checkout
+ */
+
+ .checkout-info{
+    position: relative;
+    background-color: #f7f6f7;
+    color: #515151;
+    border-top: 3px solid $theme-color;
+    width: auto;
+    word-wrap: break-word;
+    padding: 15px;
+    margin-bottom: 30px;
+    i{
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    a{
+        color: $body-color;
+        &:hover{
+            color: $theme-color;
+        }
+    }
+}
+
+.checkout-info-collapsebox{
+    padding-bottom: 30px;
+}
+
+.checkout-info-coupon{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -10px;
+    .sf-button{
+        padding: 12px 35px 10px 35px;
+    }
+    input, button{
+        margin-top: 10px;
+    }
+    input[type="text"]{
+        width: 170px;
+        margin-right: 10px;
+    }
+}
+
+.billing-info {
+    margin-top: 50px;
+}
+
+.order-infobox{
+    background: #f7f7f7;
+    padding: 30px 40px 45px;
+    .small-title{
+        margin-bottom: 20px;
+    }
+    .table{
+        color: $heading-color;
+        border-bottom: none;
+        min-width: 280px;
+    }
+    .table td, .table th{
+        vertical-align: middle;  
+        text-align: center;
+        padding: 10px 0;
+    }
+    .table tbody{
+        td span{
+            font-weight: 700;
+        }
+    }
+    .table thead th{
+        border-top: none;
+        border-width: 1px;
+        font-family: $heading-font;
+    }
+    .table tfoot th{
+        font-family: $heading-font;
+    }
+    .table tfoot th, .table tfoot td{
+        font-weight: 700;
+        border-bottom: none;
+    }
+    .table tfoot{
+        .total-price{
+            th{
+                font-size: 20px;
+            }
+            td{
+                font-size: 30px;
+                color: $theme-color;
+            }
+        }
+    }
+}
+
+.different-address {
+    margin-top: 40px;
+}
+
+.different-address-form-trigger{
+    font-size: 18px;
+    font-weight: 700;
+    font-family: $heading-font;
+}
+
+.different-address-form{
+    margin-top: 15px;
+    display: none;
+}
+
+@media #{$md-layout}{
+    .order-infobox{
+        margin-top: 50px;
+    }
+}
+
+
+@media #{$sm-layout}{
+    .different-address-form-trigger {
+        font-size: 16px;
+    }
+    .order-infobox{
+        margin-top: 50px;
+    }
+    .order-infobox .table tfoot .total-price td {
+        font-size: 24px;
+    }
+}
+
+
+@media #{$xs-layout}{
+    .order-infobox {
+        padding: 20px 20px 20px;
+    }
+}

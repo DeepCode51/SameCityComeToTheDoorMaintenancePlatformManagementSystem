@@ -1,0 +1,59 @@
+.is_clickable {
+    cursor: hand;
+    cursor: pointer;
+  }
+  .range-slider {
+    cursor: hand;
+    cursor: pointer;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 7px;
+    background: #e34691;
+  }
+  .range-slider .range-slider-leftgrip.gripHighlighted {
+    background: #113344;
+  }
+  .range-slider .range-slider-rightgrip.gripHighlighted {
+    background: #113344;
+  }
+  .range-slider .range-slider-rightgrip,
+  .range-slider .range-slider-leftgrip {
+    position: absolute;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    background: #e34691;
+    border: 5px solid #fff;
+    top: 50%;
+    margin-top: -10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  .range-slider .bar {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    position: absolute;
+    background: transparent;
+    height: 8px;
+    top: 6px;
+  }
+  .range-slider .highlightPanel {
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    position: absolute;
+    background: #e87722;
+    height: 20px;
+    top: 0;
+  }
+  

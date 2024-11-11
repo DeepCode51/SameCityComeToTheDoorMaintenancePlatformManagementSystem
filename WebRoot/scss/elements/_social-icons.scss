@@ -1,0 +1,101 @@
+/**
+ * Social Icons
+ */
+
+ .social-icons {
+	ul {
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+		font-size: 0;
+		line-height: 1;
+		li {
+			display: inline-block;
+			margin: 0 7px;
+			list-style: none;
+			font-size: 16px;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			a {
+				color: #666666;
+				&:hover {
+					color: $theme-color;
+				}
+			}
+			&.facebook {
+                a {
+                    color: #3B5998;
+                }
+			}
+			&.twitter {
+                a {
+                    color: #00ACEE;
+                }
+			}
+			&.google-plus {
+                a {
+                    color: #DD4B39;
+                }
+			}
+			&.pinterest {
+                a {
+                    color: #C8232C;
+                }
+			}
+			&.linkedin {
+                a {
+                    color: #0E76A8;
+                }
+			}
+			&.flickr {
+                a {
+                    color: #FF0084;
+                }
+			}
+			&.dribbble {
+                a {
+                    color: #EA4C89;
+                }
+			}
+			&.google {
+                a {
+                    color: #DD4B39;
+                }
+			}
+			&.skype {
+                a {
+                    color: #00AFF0;
+                }
+			}
+			&.youtube {
+                a {
+                    color: #C4302B;
+                }
+			}
+			&.vimeo {
+                a {
+                    color: #86C9EF;
+                }
+			}
+			&.yahoo {
+                a {
+                    color: #720E9E;
+                }
+			}
+			&.paypal {
+                a {
+                    color: #00588B;
+                }
+			}
+			&.instagram {
+                a {
+                    color: $instagram;
+                }
+			}
+		}
+	}
+}
